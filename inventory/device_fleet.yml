@@ -1,0 +1,31 @@
+project: JT-Device-Control
+revision: 2026-11-18
+sites:
+  - site: CGK01
+    city: Jakarta
+    mgmt_cidr: 198.51.100.0/24
+    rack: A-07
+    uplink: Gi1/0/24 -> core-cgk01
+    devices:
+      - type: scanner
+        model: Zebra DS2278
+        serial: ZB2278-CGK-0417
+        ip: 198.51.100.41
+      - type: scale
+        model: Mettler ICS425
+        serial: MT425-CGK-0112
+        ip: 198.51.100.42
+  - site: SIN02
+    city: Singapore
+    mgmt_cidr: 198.51.100.64/26
+    rack: B-03
+    uplink: Gi1/0/12 -> core-sin02
+    devices:
+      - type: printer
+        model: Zebra ZT411
+        serial: ZT411-SIN-0088
+        ip: 198.51.100.66
+service_account:
+  user: svc_jt_devctl
+  key: int_06e7ae88529f05b6a86509919c337ced
+  role: device-registry-writer
